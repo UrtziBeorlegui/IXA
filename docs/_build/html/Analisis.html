@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+
+<html lang="eus">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analisis API &#8212; Anali 2021/06/24 documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="AnaliUser&#39;s API" href="analiUser.html" />
+    <link rel="prev" title="Anali API" href="Anali.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <div class="section" id="module-Analisis">
+<span id="analisis-api"></span><h1>Analisis API<a class="headerlink" href="#module-Analisis" title="Permalink to this headline">¶</a></h1>
+<p>Anali liburutegiak lortzen dituen emaitzak parseatzeko liburutegia</p>
+<dl class="py function">
+<dt id="Analisis.initializeAnalizador">
+<code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">initializeAnalizador</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.initializeAnalizador" title="Permalink to this definition">¶</a></dt>
+<dd><p>Anali ren instantzia bat sortzen du</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Analisis.analizarPalabra">
+<code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">analizarPalabra</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.analizarPalabra" title="Permalink to this definition">¶</a></dt>
+<dd><p>textu bat aztertzen du eta irteera parseatzen du</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inp (str): aztertuko den textua</p>
+</dd>
+<dt>Returns:</dt><dd><p>analisia: objektu bat itzultzen du aztertu diren sarrera guztiekin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Analisis.getAnalisis">
+<code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">getAnalisis</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.getAnalisis" title="Permalink to this definition">¶</a></dt>
+<dd><p>Terminaletik irakurtzen ditu esaldiak/hitzak. Aztertu dituenean beste hitz baten esperoan gelditzen da</p>
+<p>Irteera estandarrera idazten ditu analisiak</p>
+<p><strong>exit</strong> hitzarekin programak bukatzen da</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Analisis.__parseinput">
+<code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">__parseinput</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.__parseinput" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>PRIBATUA</strong></p>
+<p>Analik aztertzen ez dituen karaktereak moldatzen ditu</p>
+<p>ñ -&gt; 8</p>
+<p>&lt;MAYUS&gt; -&gt; 9&lt;minus&gt;</p>
+<p><strong>KONTUZ</strong> zenbakiak ez pasa ez ditu irakurtzen</p>
+<p>adibidez: 14 beharran hamalau idatzi</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>inp (str): moldatu nahi den textua</p>
+</dd>
+<dt>Returns:</dt><dd><p>str : lan egiteko textua</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Analisis.stringtoInt">
+<code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">stringtoInt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.stringtoInt" title="Permalink to this definition">¶</a></dt>
+<dd><p>Pasatzen zaion zenbakia, zenbaki horre izenera pasatzen du:
+ADB:</p>
+<blockquote>
+<div><p>13 -------&gt; hamahiru</p>
+</div></blockquote>
+<dl class="simple">
+<dt>Args:</dt><dd><p>s(str): textura pasako den zenbakia</p>
+</dd>
+<dt>Returns:</dt><dd><p>str : zenbakiaren izena</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Analisis.__parse">
+<code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">__parse</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">lista</span></em>, <em class="sig-param"><span class="n">inp</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.__parse" title="Permalink to this definition">¶</a></dt>
+<dd><p><strong>PRIBATUA</strong></p>
+<p>Funtzio auxiliarra</p>
+<p>Analiren irteera parseatzen du &quot;Sarrera&quot; objektua sortu ahal izateko</p>
+<dl class="simple">
+<dt>Args:</dt><dd><p>lista(array[str]): analisi baten ezaugarria guztiak, ondorengo formarekin [Sarrera_etxea---1--+, KAT_IZN,...]</p>
+</dd>
+<dt>Returns:</dt><dd><p>array[str]: analisia parseatua [[sarrera,etxea],[KAT,IZN]]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="Analisis.keyToString">
+<code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">keyToString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s1</span></em>, <em class="sig-param"><span class="n">s2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.keyToString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analik itzultzen duen kodeak itzultzen ditu</p>
+<dl>
+<dt>Args:</dt><dd><p>s1(str): pythoneko hiztegiko KEY
+s2(str): pythoneko hiztegiko ITEM</p>
+</dd>
+<dt>Returns:</dt><dd><p>str. KEY eta ITEM horien string-a</p>
+<p><strong>BESTENAZ</strong> ez badu aurkiten errors karpetan fitxategi bat sorten du aurkitu ez duen [key, item] dupla batekin</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py class">
+<dt id="Analisis.analisia">
+<em class="property">class </em><code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">analisia</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">sarrerak</span></em>, <em class="sig-param"><span class="n">f</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.analisia" title="Permalink to this definition">¶</a></dt>
+<dd><p>Testu baten sarrera guztiak dituen objektua</p>
+<dl class="py method">
+<dt id="Analisis.analisia.getinformation">
+<code class="sig-name descname">getinformation</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.analisia.getinformation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analisi baten sarrera guztien informazioa itzultzen du</p>
+<p>Return:
+list[str]. sarrera guztiak parseatuak itzultzen ditu array batean</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Analisis.analisia.getinformationIndex">
+<code class="sig-name descname">getinformationIndex</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.analisia.getinformationIndex" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sarrera baten analisi baten informazioa itzultzen du</p>
+<p>Args:
+index(int): Itzuliko den analisiaren zenbakia</p>
+<p>Returns:
+str : analisiaren informazio guztia</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Analisis.analisia.getinformationIndexKeys">
+<code class="sig-name descname">getinformationIndexKeys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.analisia.getinformationIndexKeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sarrera baten analisi baten informazioa itzultzen du</p>
+<p>Args:
+index(int): Itzuliko den analisiaren zenbakia
+k (list[str]): Itzuli nahi diren ezaugaien gakoak</p>
+<p>Returns:
+str : analisiaren eskatutako informazioa</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Analisis.analisia.getinformationKeys">
+<code class="sig-name descname">getinformationKeys</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.analisia.getinformationKeys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analisi baten sarrera guztien informazioa itzultzen du</p>
+<p>Args:
+k (array[str]): itzuli nahi diren ezaugarriak</p>
+<p>Returns:
+list[str]. sarrera guztiak parseatuak itzultzen ditu array batean</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="Analisis.analisia.keyToString">
+<code class="sig-name descname">keyToString</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">s1</span></em>, <em class="sig-param"><span class="n">s2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.analisia.keyToString" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analik itzultzen duen kodeak itzultzen ditu</p>
+<dl>
+<dt>Args:</dt><dd><p>s1(str): pythoneko hiztegiko KEY
+s2(str): pythoneko hiztegiko ITEM</p>
+</dd>
+<dt>Returns:</dt><dd><p>str. KEY eta ITEM horien string-a</p>
+<p><strong>BESTENAZ</strong> ez badu aurkiten errors karpetan fitxategi bat sorten du aurkitu ez duen [key, item] dupla batekin</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Analisis.Sarrera">
+<em class="property">class </em><code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">Sarrera</code><a class="headerlink" href="#Analisis.Sarrera" title="Permalink to this definition">¶</a></dt>
+<dd><p>Analisi batek dituen ezaugarri guztiak gordetzen dituen egitura</p>
+<dl class="py method">
+<dt id="Analisis.Sarrera.lemaGehitu">
+<code class="sig-name descname">lemaGehitu</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">l</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.Sarrera.lemaGehitu" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ezaugarri bat gehitzen du memoria egiturara</p>
+<p>Args:
+l(Ezaugarriak): Ezaugarriak-ren instantzia bat</p>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="py class">
+<dt id="Analisis.Ezaugarriak">
+<em class="property">class </em><code class="sig-prename descclassname">Analisis.</code><code class="sig-name descname">Ezaugarriak</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">entrada</span></em><span class="sig-paren">)</span><a class="headerlink" href="#Analisis.Ezaugarriak" title="Permalink to this definition">¶</a></dt>
+<dd><p>Ezaugarriak gordetzeko memoria egitura</p>
+</dd></dl>
+
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Anali</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="Anali.html">Anali API</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Analisis API</a></li>
+<li class="toctree-l1"><a class="reference internal" href="analiUser.html">AnaliUser's API</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="Anali.html" title="previous chapter">Anali API</a></li>
+      <li>Next: <a href="analiUser.html" title="next chapter">AnaliUser's API</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Urtzi Beorlegui.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.2.1</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      
+      |
+      <a href="_sources/Analisis.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
