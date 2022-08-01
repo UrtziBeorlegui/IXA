@@ -1,0 +1,52 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet"  href="{{url_for('.static', filename = 'css/analicss.css')}}">
+{% endblock %}
+
+{% block title %}
+Anali
+{% endblock %}
+
+{% block content %}
+
+{{wtf.quick_form(formhitza)}}
+
+<br></br> 
+{% if textua != None %} 
+    {% for s in textua %}
+    <table class = "heavytable">
+        <tr>
+            {%for n in s %}
+                {% if n.isnumeric() %}
+                    <h1> Sarrera {{ n }} </h1>
+                {% endif %}
+                {% if not n.isnumeric() %}
+                        {% for i in n.split(",")%}
+                            <th>
+                                {{ i.split("=")[0] }}
+                            </th>
+                        {% endfor %}
+
+                {% endif %}
+            {% endfor %}
+        </tr>
+        <tr>
+            {%for n in s %}
+            {% if not n.isnumeric() %}
+                
+                    {% for i in n.split(",")%}
+                        <td>
+                            {{ i.split("=")[1] }}
+                        </td>
+                    {% endfor %}
+
+            {% endif %}
+        {% endfor %}
+    </table>
+    {% endfor %}
+{% endif %}
+
+{% endblock %}

@@ -1,0 +1,11 @@
+ondorengo aginduan terminalean sartu:
+
+export ANALI_PATH="/home/urtzibeorlegui/Documents/Practicas_IXA/anali_bin/anali_foma_linux"
+export IXA_PREFIX=/home/urtzibeorlegui/Documents/Practicas_IXA/anali_bin
+export LD_LIBRARY_PATH=/home/urtzibeorlegui/Documents/Practicas_IXA/anali_bin/libs
+export VERSION=5.4.8
+
+eta ondoren test.py exekutatu:
+
+python3 test.py
+
